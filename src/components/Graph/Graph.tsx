@@ -34,5 +34,10 @@ export default function Graph({
     };
   }, [dataArray, edgesArray]);
 
-  return <div className="w-full max-w-xl h-[400px]" ref={containerRef}></div>;
+  return (
+    <div
+      className="w-full max-w-xl h-[400px] border shadow-inner rounded-md"
+      ref={containerRef}
+    ></div>
+  );
 }
