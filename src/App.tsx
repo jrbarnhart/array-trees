@@ -1,4 +1,5 @@
 import DataGUI from "./components/DataGUI/DataGUI";
+import Graph from "./components/Graph/Graph";
 import Header from "./components/Header/Header";
 
 const phData = ["A", "B", "C", "D", "E", "F", "G"];
@@ -16,6 +17,7 @@ function App() {
     <main className="flex items-center flex-col gap-y-4 px-2">
       <Header />
       <DataGUI data={phData} edges={phEdges} />
+      <Graph dataArray={phData} edgesArray={phEdges} />
     </main>
   );
 }
