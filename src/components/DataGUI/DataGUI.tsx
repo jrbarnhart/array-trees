@@ -7,7 +7,13 @@ import {
 } from "../ui/card";
 import { ScrollArea } from "../ui/scroll-area";
 
-export default function DataGUI() {
+export default function DataGUI({
+  ...props
+}: {
+  data: string[];
+  edges: [number, number][];
+}) {
+  const { data, edges } = props;
   return (
     <div className="max-w-xl w-full">
       <Card>
@@ -21,41 +27,17 @@ export default function DataGUI() {
           <h2 className="text-lg font-bold">Data</h2>
           <ScrollArea className="h-48 border shadow-inner rounded-sm">
             <ul>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
+              {data.map((entry, index) => (
+                <li key={index}>{entry}</li>
+              ))}
             </ul>
           </ScrollArea>
           <h2 className="col-start-2 row-start-1 text-lg font-bold">Edges</h2>
           <ScrollArea className="h-48 border shadow-inner rounded-sm">
             <ul>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
-              <li>Data</li>
+              {edges.map((entry, index) => (
+                <li key={index}>{entry}</li>
+              ))}
             </ul>
           </ScrollArea>
         </CardContent>
